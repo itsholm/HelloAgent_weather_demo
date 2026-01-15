@@ -20,7 +20,7 @@
 
 ### 环境配置
 
-项目依赖以下环境变量（建议在 `.env` 中配置，不要提交到 Git 仓库）：
+项目依赖以下环境变量（在同目录下新建`.env` 配置）：
 
 - `LLM_MODEL_ID`：模型 ID（如 `gpt-4.1-mini` 或其他兼容 OpenAI 协议的模型名称）。
 - `LLM_API_KEY`：LLM 服务的 API Key。
