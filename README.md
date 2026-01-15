@@ -15,7 +15,7 @@
 - `ToolExecutor.py`：统一管理工具注册与调用。
 - `get_weather.py`：天气查询工具。
 - `get_attraction.py`：景点搜索工具（Tavily）。
-- `test.py`：示例入口代码，展示如何组合以上组件。
+- `main.py`：示例入口代码，展示如何组合以上组件。
 - `systemprompt.py`：ReAct Prompt 模板。
 
 ### 环境配置
