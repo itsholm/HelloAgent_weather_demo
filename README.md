@@ -7,20 +7,29 @@
 - **ReAct 智能体**：根据系统 Prompt 选择调用不同工具，多轮 `Thought` / `Action` / `Observation` 推理。
 - **天气查询工具**：调用 `wttr.in` 接口，获取真实城市天气信息。
 - **景点推荐工具**：基于 Tavily Search API，根据城市与天气推荐景点。
+- **交互式命令行**：支持循环输入查询，持续对话，输入 `exit`/`quit`/`q` 退出
+- **完善的日志系统**：支持多级别日志（DEBUG/INFO/WARNING/ERROR），同时输出到控制台和文件，自动日志轮转
 
-### 代码结构
-
-- `ReActAgent.py`：智能体核心逻辑（循环调用 LLM、解析 Action、调度工具）。
-- `callmodel.py`：对 OpenAI Chat Completions 接口的简单封装。
-- `ToolExecutor.py`：统一管理工具注册与调用。
-- `get_weather.py`：天气查询工具。
-- `get_attraction.py`：景点搜索工具（Tavily）。
-- `main.py`：示例入口代码，展示如何组合以上组件。
-- `systemprompt.py`：ReAct Prompt 模板。
+### 项目结构
+```
+helloagent_天气助手/
+├── main.py                 # 主程序入口（交互式循环输入）
+├── ReActAgent.py           # 智能体核心逻辑（循环调用 LLM、解析 Action、调度工具）
+├── callmodel.py            # 对 OpenAI Chat Completions 接口的封装
+├── ToolExecutor.py         # 统一管理工具注册与调用
+├── get_weather.py          # 天气查询工具（wttr.in API）
+├── get_attraction.py       # 景点搜索工具（Tavily Search API）
+├── systemprompt.py         # ReAct Prompt 模板
+├── logger_config.py        # 日志配置模块
+├── requirements.txt        # 项目依赖
+├── README.md               # 项目说明文档
+├── LOGGING_GUIDE.md        # 日志功能详细使用指南
+└── .gitignore              # Git 忽略文件配置
+```
 
 ### 环境配置
 
-项目依赖以下环境变量（在同目录下新建`.env` 配置）：
+项目依赖以下环境变量（在项目根目录创建 `.env` 文件，配置以下环境变量）：
 
 - `LLM_MODEL_ID`：模型 ID（如 `gpt-4.1-mini` 或其他兼容 OpenAI 协议的模型名称）。
 - `LLM_API_KEY`：LLM 服务的 API Key。
