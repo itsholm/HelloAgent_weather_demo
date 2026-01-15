@@ -2,7 +2,7 @@
 
 一个基于 ReAct 模式的简单智能体 Demo：通过 LLM 调用真实工具（天气查询、景点推荐），给出对话式回答。
 
-### 功能简介
+## 功能简介
 
 - **ReAct 智能体**：根据系统 Prompt 选择调用不同工具，多轮 `Thought` / `Action` / `Observation` 推理。
 - **天气查询工具**：调用 `wttr.in` 接口，获取真实城市天气信息。
@@ -10,7 +10,7 @@
 - **交互式命令行**：支持循环输入查询，持续对话，输入 `exit`/`quit`/`q` 退出
 - **完善的日志系统**：支持多级别日志（DEBUG/INFO/WARNING/ERROR），同时输出到控制台和文件，自动日志轮转
 
-### 项目结构
+## 项目结构
 ```
 helloagent_天气助手/
 ├── main.py                 # 主程序入口（交互式循环输入）
@@ -42,7 +42,7 @@ helloagent_天气助手/
 pip install -r requirements.txt
 ```
 
-### 运行示例
+## 运行示例
 
 ```bash
 python main.py
