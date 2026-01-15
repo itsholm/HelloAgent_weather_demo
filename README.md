@@ -44,8 +44,6 @@ pip install -r requirements.txt
 
 ### 运行示例
 
-### 交互式运行（推荐）
-
 ```bash
 python main.py
 ```
